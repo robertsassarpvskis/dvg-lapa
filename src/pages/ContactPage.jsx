@@ -38,7 +38,6 @@ const ContactPage = () => {
                             (darba dienās no plkst. 9.00 līdz plkst. 17.00)
                         </p>
                     </>
-
                 }
                 />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

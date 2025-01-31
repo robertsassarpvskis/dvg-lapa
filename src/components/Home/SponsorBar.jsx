@@ -34,7 +34,7 @@ const SponsorBar = () => {
                 <p className="text-gray-600 text-center text-lg mt-3 mb-8">
                     We are grateful to our sponsors and supporters who make our work possible.
                 </p>
-                <div className="columns-5 gap-3 items-stretch mx-auto py-8">
+                <div className="columns-3 sm:columns-3 md:columns-4 lg:columns-5 gap-3 items-stretch mx-auto py-8">
                     <SponsorElement sponsor={GI} name="Google For Education" />
                     <SponsorElement sponsor={aus} name="Sponsor 2" />
                     <SponsorElement sponsor={uzdevumi} name="Sponsor 3" />

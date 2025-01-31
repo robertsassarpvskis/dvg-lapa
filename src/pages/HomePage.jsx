@@ -18,8 +18,9 @@ const HomePage = () => {
                 <TitleGreen darkText={"Mūsu"} greenText={"Programmas"}/>
                 <ProgramTransition />
             </div>
-            <GoogleMap />
             <SponsorBar />
+            <GoogleMap />
+
         </div>
         
      );

@@ -1,8 +1,7 @@
 import AdmissionElement from "../components/Admission/AdmissionCriteria";
 import MissonElement from "../components/Home/MissionElement";
 import NewsHeader from "../components/NewsHeader";
-import Health from "/src/assets/icons/health.svg";
-import WordDoc10_12 from "/src/assets/documents/admission/PIETEIKUMS_uznemsanai_10_12.klasei_2024 (4).docx"
+
 const AdmissionPage = () => {
     const admissionData7to9 = {
         title: "Izglītojamo uzņemšana 7. – 9. klasēs 2024./2025.m.g.",
