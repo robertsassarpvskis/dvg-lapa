@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/news" element={<NewsPage />} />
         <Route path="/library" element={<LibraryPage />} />
         <Route path="/admission" element={<AdmissionPage />} />
-        <Route path="/contact" element={<ContactPage />} /> {/* <-- Šim jābūt! */}
+        <Route path="/contact" element={<ContactPage />} />
 
       </Routes>
       <Footer />

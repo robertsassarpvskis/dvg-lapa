@@ -7,7 +7,7 @@ import BookIcon from "/src/assets/icons/book.svg";
 const MissionBar = () => {
     return ( 
         <section className="pt-12 sm:pt-6 md:pt-12 pb-20 bg-whiteGray">
-            <div className="container mx-auto px-2 sm:px-4 lg:px-16">
+            <div className="container mx-auto px-2 sm:px-4 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <MissonElement 
                         title="Misija" 

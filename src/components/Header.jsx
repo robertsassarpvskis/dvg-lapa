@@ -7,8 +7,8 @@ const HeaderHome = () => {
             <div className="container mx-auto px-4 py-16">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* Text Section */}
-                    <div className="md:w-1/2 mb-8 md:mb-0">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+                    <div className="md:w-1/2 ms-5 md:ms-5 sm:ms-0 mb-8 md:mb-0">
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4  sm:text-center md:text-start">
                             Daugavpils Valsts <br /><span className="text-[#8b9d77]">ģimnāzija</span>
                         </h1>
                         <p className="text-gray-600 text-lg mb-6 md:w-[80%]">

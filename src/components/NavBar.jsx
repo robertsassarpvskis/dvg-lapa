@@ -15,20 +15,19 @@ export default function NavBar() {
   return (
     <div className="bg-greenLight pt-4 md:pt-6 sm:pt-4">
       <div className="container mx-auto px-2">
-        <div className="bg-white border border-greenDark py-4 shadow-lg ps-6 pe-8 rounded-2xl sticky top-0 z-50">
+        <div className="bg-white border border-greenDark py-4 shadow-lg  rounded-2xl sticky top-0 z-50">
           <div className="flex items-center justify-between">
             <div>
               <Link to="/"> {/* <-- Use Link instead of <a> */}
                 <img
                   src={Logo}
                   alt="Logo"
-                  className="cursor-pointer w-28 transition-transform duration-300 hover:scale-105"
+                  className="cursor-pointer ms-5 w-28 transition-transform duration-300 hover:scale-105"
                 />
               </Link>
             </div>
 
-            {/* Menu Button (Centered on Mobile) */}
-            <div className="lg:hidden flex justify-end flex-1">
+            <div className="lg:hidden flex justify-end flex-1 me-10">
               <button
                 className="text-gray-700"
                 onClick={() => setMenuOpen(!isMenuOpen)}
@@ -85,121 +84,143 @@ export default function NavBar() {
 
           {/* Mobile Menu (Attached to Nav Bar) */}
           {isMenuOpen && (
-            <div className="lg:hidden bg-white shadow-md rounded-b-2xl mt-6">
-              <div className="flex flex-col text-gray-700 font-medium gap-4 px-4 text-center text-lg py-4">
-                {/* Dropdown for "Par Mums" */}
-                <div className="flex flex-col">
-                  <button
-                    className="flex justify-center items-center hover:text-greenDark transition"
-                    onClick={() => toggleDropdown("par-mums")}
-                  >
-                    <span>Par Mums</span>
-                    <img
-                      src={icon}
-                      alt="arrow"
-                      className={`w-6 h-6 transform transition-all duration-300 ${
-                        openDropdown === "par-mums" ? "rotate-90" : ""
-                      }`}
-                    />
-                  </button>
+            <div
+            className={`lg:hidden bg-whiteGray rounded-b-2xl mt-6 transition-all duration-500 ${
+              isMenuOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+            } overflow-hidden`}
+          >
+            <div className="flex flex-col text-gray-700 font-medium gap-4 text-center text-lg py-5 px-4 rounded-xl border-t border-t-greenDark">
+              {/* Dropdown for "Par Mums" */}
+              <div className="flex flex-col">
+                <button
+                  className="flex justify-center items-center hover:text-greenDark transition"
+                  onClick={() => toggleDropdown("par-mums")}
+                >
+                  <span>Par Mums</span>
+                  <img
+                    src={icon}
+                    alt="arrow"
+                    className={`w-6 h-6 transform transition-all duration-300 ${
+                      openDropdown === "par-mums" ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`${
+                    openDropdown === "par-mums" ? "opacity-100 mt-2" : "opacity-0"
+                  } overflow-hidden bg-green-50 border-2 border-greenLight rounded-xl px-2 transition-all duration-500`}
+                >
                   {openDropdown === "par-mums" && (
-                    <div className="pl-4">
-                      <Link to="/contact" className="block hover:text-greenDark transition">
+                    <>
+                      <Link to="/contact" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Kontakti
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition  border-b-2 border-b-greenDark-100 py-2">
                         Kolektīvs
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition py-2">
                         Tradīcijas, Vēsture, Simboli
                       </Link>
-                    </div>
+                    </>
                   )}
                 </div>
-
-                {/* Dropdown for "Izglītība" */}
-                <div className="flex flex-col">
-                  <button
-                    className="flex justify-center items-center hover:text-greenDark transition"
-                    onClick={() => toggleDropdown("izglitiba")}
-                  >
-                    <span>Izglītība</span>
-                    <img
-                      src={icon}
-                      alt="arrow"
-                      className={`w-6 h-6 transform transition-all duration-300 ${
-                        openDropdown === "izglitiba" ? "rotate-90" : ""
-                      }`}
-                    />
-                  </button>
+              </div>
+          
+              {/* Dropdown for "Izglītība" */}
+              <div className="flex flex-col">
+                <button
+                  className="flex justify-center items-center hover:text-greenDark transition"
+                  onClick={() => toggleDropdown("izglitiba")}
+                >
+                  <span>Izglītība</span>
+                  <img
+                    src={icon}
+                    alt="arrow"
+                    className={`w-6 h-6 transform transition-all duration-300 ${
+                      openDropdown === "izglitiba" ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`${
+                    openDropdown === "izglitiba" ? "opacity-100 mt-2" : "opacity-0"
+                  } overflow-hidden bg-green-50 border-2 border-greenLight rounded-xl px-2 transition-all duration-500`}
+                >
                   {openDropdown === "izglitiba" && (
-                    <div className="pl-4">
-                      <Link to="/" className="block hover:text-greenDark transition">
+                    <>
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Formālā izglītība
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Karjeras izglītība
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Interešu izglītība
                       </Link>
-                    </div>
+                    </>
                   )}
                 </div>
-
-                {/* Dropdown for "Pakalpojumi" */}
-                <div className="flex flex-col">
-                  <button
-                    className="flex justify-center items-center hover:text-greenDark transition"
-                    onClick={() => toggleDropdown("pakalpojumi")}
-                  >
-                    <span>Pakalpojumi</span>
-                    <img
-                      src={icon}
-                      alt="arrow"
-                      className={`w-6 h-6 transform transition-all duration-300 ${
-                        openDropdown === "pakalpojumi" ? "rotate-90" : ""
-                      }`}
-                    />
-                  </button>
+              </div>
+          
+              {/* Dropdown for "Pakalpojumi" */}
+              <div className="flex flex-col">
+                <button
+                  className="flex justify-center items-center hover:text-greenDark transition"
+                  onClick={() => toggleDropdown("pakalpojumi")}
+                >
+                  <span>Pakalpojumi</span>
+                  <img
+                    src={icon}
+                    alt="arrow"
+                    className={`w-6 h-6 transform transition-all duration-300 ${
+                      openDropdown === "pakalpojumi" ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`${
+                    openDropdown === "pakalpojumi" ? "opacity-100  mt-2" : "opacity-0"
+                  } overflow-hidden bg-green-50 border-2 border-greenLight rounded-xl px-2 transition-all duration-500`}
+                >
                   {openDropdown === "pakalpojumi" && (
-                    <div className="pl-4">
-                      <Link to="/" className="block hover:text-greenDark transition">
+                    <>
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Dienesta Viesnīca
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Sporta Komplekss
                       </Link>
-                      <Link to="/" className="block hover:text-greenDark transition">
+                      <Link to="/" className="block hover:text-greenDark transition border-b-2 border-b-greenDark-100 py-2">
                         Telpu Noma
                       </Link>
-                    </div>
+                    </>
                   )}
                 </div>
-
-                {/* Standalone Links */}
-                <Link to="/news" className="hover:text-greenDark transition">
-                  Aktualitātes
-                </Link>
-                <Link to="/" className="hover:text-greenDark transition">
-                  Skolēniem
-                </Link>
-                <Link to="/" className="hover:text-greenDark transition">
-                  Vecākiem
-                </Link>
-                <Link to="/admission" className="hover:text-greenDark transition">
-                  Uzņemšana
-                </Link>
-                <Link to="/library" className="hover:text-greenDark transition">
-                  Bibliotēka
-                </Link>
               </div>
-
-              {/* Additional information block below the menu */}
-              <div className="px-4 text-center pb-4">
-                <p className="text-gray-600 text-sm">Papildu informācija var būt šeit.</p>
-              </div>
+          
+              {/* Standalone Links */}
+              <Link to="/news" className="hover:text-greenDark transition">
+                Aktualitātes
+              </Link>
+              <Link to="/" className="hover:text-greenDark transition">
+                Skolēniem
+              </Link>
+              <Link to="/" className="hover:text-greenDark transition">
+                Vecākiem
+              </Link>
+              <Link to="/admission" className="hover:text-greenDark transition">
+                Uzņemšana
+              </Link>
+              <Link to="/library" className="hover:text-greenDark transition">
+                Bibliotēka
+              </Link>
             </div>
+          
+            {/* Additional information block below the menu */}
+            <div className="px-4 text-center pb-4">
+              <p className="text-gray-600 text-sm">Papildu informācija var būt šeit.</p>
+            </div>
+          </div>
           )}
         </div>
       </div>

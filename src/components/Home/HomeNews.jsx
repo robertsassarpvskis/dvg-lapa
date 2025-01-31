@@ -31,7 +31,7 @@ const HomeNews = () => {
 
     return (
         <div className="py-16 bg-whiteGray">
-            <div className="container  mx-auto px-2 sm:px-4 lg:px-16">
+            <div className="container  mx-auto px-2 sm:px-4 lg:px-12">
                 <div className="flex flex-col items-center text-center mb-12">
                     <TitleGreen darkText={"Skolas Ziņas "} greenText={"& Jaunumi"} />
                     <div className="w-20 h-1 bg-greenDark rounded-full mb-4"></div>

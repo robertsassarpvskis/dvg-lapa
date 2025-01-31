@@ -20,7 +20,7 @@ const InfoPage = ({
     return (
         <div className="bg-whiteGray">
             <NewsHeader Heading={heading} HeadingGreen={headingGreen} text={introText} />
-            <div className="container mx-auto px-4 sm:px-8 lg:px-16 pb-10">
+            <div className="container mx-auto px-4 sm:px-8 lg:px-4 pb-10">
                 <ServiceImageSection Image={image} Title={aboutTitle} text={aboutText} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-12">
